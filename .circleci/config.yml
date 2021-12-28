@@ -1,8 +1,8 @@
-version 2.1
+version: 2.1
 
 jobs:
   build:
-    working_directory: ~/circle-python
+    working_directory: ~/circleci-python
     docker:
       - image: "circleci/python:3.6.4"
     steps:
@@ -22,5 +22,4 @@ workflows:
       - build
       - test:
           requires:
-            - build  
-    
+            - build
