@@ -21,7 +21,11 @@ jobs:
       - checkout
       - run: python3 main.py
       - print_pipeline_id:
-          id: << pipeline.id >>
+          id: << pipeline.ia >>
+      - run:
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail    
   test:
     <<: *defaults
     steps:
