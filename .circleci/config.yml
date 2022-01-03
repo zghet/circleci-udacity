@@ -1,10 +1,16 @@
 version: 2.1
 
-jobs:
-  build:
+defaults: &defaults
     working_directory: ~/circleci-python
     docker:
       - image: "circleci/python:3.6.4"
+
+jobs:
+  build:
+    #working_directory: ~/circleci-python
+    #docker:
+    #  - image: "circleci/python:3.6.4"
+    <<: *defaults
     steps:
       - checkout
       - run: python3 main.py
